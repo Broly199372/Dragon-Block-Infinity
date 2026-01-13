@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+gradle-8.7/
+gradle-8.7-bin.zip
+build/
+out/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Java
+*.class
+*.jar
+!gradle-wrapper.jar
+
+# Logs
+logs/
+*.log
+
+# Minecraft
+run/
