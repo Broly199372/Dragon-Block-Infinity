@@ -8,9 +8,9 @@ import com.dragonblockinfinity.item.ModItems;
  * Classe central para registrar todos os componentes do mod
  */
 public class ModRegistry {
-    public static void register() {
-        ModBlocks.register();
-        ModItems.register();
+    public static void register(net.minecraftforge.eventbus.api.IEventBus bus) {
+        ModBlocks.register(bus);
+        com.dragonblockinfinity.item.ModItems.register(bus);
         ModEntities.register();
     }
 }

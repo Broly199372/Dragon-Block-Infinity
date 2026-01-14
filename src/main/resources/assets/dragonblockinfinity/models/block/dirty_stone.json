@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "dragonblockinfinity:block/dirty_stone_stone"
+  }
+}

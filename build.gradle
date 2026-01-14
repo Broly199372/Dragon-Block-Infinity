@@ -6,7 +6,6 @@ plugins {
 
 group = 'com.dragonblockinfinity'
 version = '1.0.0'
-archivesBaseName = 'dragonblockinfinity'
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -21,8 +20,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.console.level', 'debug'
             
-            // Suprimir warnings de Gradle 9.0
-            property 'org.gradle.internal.launcher.welcomeMessageEnabled', 'false'
+            // Propriedades do run
             
             mods {
                 dragonblockinfinity {
@@ -46,12 +44,5 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
-// Suprime warnings de deprecação do Gradle
-gradle.taskGraph.whenReady { taskGraph ->
-    taskGraph.allTasks.each { task ->
-        if (task.name.contains('compileJava')) {
-            task.options.compilerArgs.addAll('-Xlint:-deprecation')
-        }
-    }
-}
+// Não suprimir warnings; manter comportamento padrão para depreciações
 

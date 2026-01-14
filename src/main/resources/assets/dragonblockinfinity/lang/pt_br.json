@@ -1,3 +1,14 @@
 {
-  "key.dragonblockinfinity.customization": "Abrir Menu de Customização"
+  "key.dragonblockinfinity.customization": "Abrir Menu de Customização",
+  "item.dragonblockinfinity.scouter": "Scouter",
+  "item.dragonblockinfinity.nimbus": "Nuvem Nimbus",
+  "item.dragonblockinfinity.peso": "Peso de Treino",
+  "item.dragonblockinfinity.comida": "Comida"
+  ,"item.dragonblockinfinity.dino_meat": "Carne de Dinossauro"
+  ,"item.dragonblockinfinity.dino_meat_cooked": "Carne de Dinossauro Cozida"
+  ,"item.dragonblockinfinity.senzu": "Semente Senzu"
+  ,"item.dragonblockinfinity.dragon_esfer": "Esfera do Dragão"
+  ,"item.dragonblockinfinity.esfera_dragon_earth": "Esfera da Terra"
+  ,"item.dragonblockinfinity.radar": "Radar"
+  ,"block.dragonblockinfinity.dirty_stone": "Pedra Suja"
 }
