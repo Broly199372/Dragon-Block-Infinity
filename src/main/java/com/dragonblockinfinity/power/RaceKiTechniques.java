@@ -3,17 +3,17 @@ package com.dragonblockinfinity.power;
 import com.dragonblockinfinity.race.RaceEnum;
 
 /**
- * Sistema de técnicas especiais de Ki por raça
- * Cada raça tem suas próprias técnicas únicas
+ * Sistema de tÃ©cnicas especiais de Ki por raÃ§a
+ * Cada raÃ§a tem suas prÃ³prias tÃ©cnicas Ãºnicas
  */
 public class RaceKiTechniques {
     
     /**
-     * Técnicas de Saiyajin
+     * TÃ©cnicas de Saiyajin
      */
     public static class SaiyanTechniques {
-        public static final String KAIOKEN = "kaioken"; // Aumenta força mas consome stamina
-        public static final String SPIRIT_BOMB = "spirit_bomb"; // Técnica poderosa coletiva
+        public static final String KAIOKEN = "kaioken"; // Aumenta forÃ§a mas consome stamina
+        public static final String SPIRIT_BOMB = "spirit_bomb"; // TÃ©cnica poderosa coletiva
         public static final String KAMEHAMEHA = "kamehameha"; // Raio de Ki poderoso
         
         public static int getKiCost(String technique) {
@@ -36,11 +36,11 @@ public class RaceKiTechniques {
     }
     
     /**
-     * Técnicas de Arcosian
+     * TÃ©cnicas de Arcosian
      */
     public static class ArcosianTechniques {
         public static final String DEATH_BEAM = "death_beam"; // Raio mortal precisso
-        public static final String FINAL_FLASH = "final_flash"; // Explosão final poderosa
+        public static final String FINAL_FLASH = "final_flash"; // ExplosÃ£o final poderosa
         public static final String NOVA_STRIKE = "nova_strike"; // Ataque explosivo
         
         public static int getKiCost(String technique) {
@@ -63,12 +63,12 @@ public class RaceKiTechniques {
     }
     
     /**
-     * Técnicas de Half-Saiyan
+     * TÃ©cnicas de Half-Saiyan
      */
     public static class HalfSaiyanTechniques {
-        public static final String HYBRID_BLAST = "hybrid_blast"; // Combinação de técnicas
-        public static final String POWER_SURGE = "power_surge"; // Aumento rápido de força
-        public static final String ADAPTIVE_COUNTER = "adaptive_counter"; // Contra-ataque adaptável
+        public static final String HYBRID_BLAST = "hybrid_blast"; // CombinaÃ§Ã£o de tÃ©cnicas
+        public static final String POWER_SURGE = "power_surge"; // Aumento rÃ¡pido de forÃ§a
+        public static final String ADAPTIVE_COUNTER = "adaptive_counter"; // Contra-ataque adaptÃ¡vel
         
         public static int getKiCost(String technique) {
             return switch (technique) {
@@ -90,12 +90,12 @@ public class RaceKiTechniques {
     }
     
     /**
-     * Técnicas de Humano
+     * TÃ©cnicas de Humano
      */
     public static class HumanTechniques {
         public static final String CHARGED_SHOT = "charged_shot"; // Tiro carregado
         public static final String ENERGY_WAVE = "energy_wave"; // Onda de energia controlada
-        public static final String MULTI_ATTACK = "multi_attack"; // Múltiplos ataques rápidos
+        public static final String MULTI_ATTACK = "multi_attack"; // MÃºltiplos ataques rÃ¡pidos
         
         public static int getKiCost(String technique) {
             return switch (technique) {
@@ -117,7 +117,7 @@ public class RaceKiTechniques {
     }
     
     /**
-     * Obtém custo de Ki de uma técnica baseado na raça
+     * ObtÃ©m custo de Ki de uma tÃ©cnica baseado na raÃ§a
      */
     public static int getTechniqueCost(RaceEnum race, String technique) {
         return switch (race) {
@@ -130,7 +130,7 @@ public class RaceKiTechniques {
     }
     
     /**
-     * Obtém dano de uma técnica baseado na raça e nível de Ki
+     * ObtÃ©m dano de uma tÃ©cnica baseado na raÃ§a e nÃ­vel de Ki
      */
     public static double getTechniqueDamage(RaceEnum race, String technique, int kiLevel) {
         return switch (race) {

@@ -5,19 +5,19 @@ package com.dragonblockinfinity.fightstyle;
  * Equilibrado em todos os aspectos
  * 
  * Stats Base:
- * - Str: 11 (médio-alto)
- * - Con: 11 (médio-alto)
- * - Dex: 12 (médio-alto)
- * - Will: 11 (médio-alto)
- * - Spi: 11 (médio-alto)
- * - Mnd: 11 (médio-alto)
+ * - Str: 11 (mÃ©dio-alto)
+ * - Con: 11 (mÃ©dio-alto)
+ * - Dex: 12 (mÃ©dio-alto)
+ * - Will: 11 (mÃ©dio-alto)
+ * - Spi: 11 (mÃ©dio-alto)
+ * - Mnd: 11 (mÃ©dio-alto)
  * 
  * Multiplicadores:
- * - Str: 1.8x (bônus equilibrado)
- * - Con: 1.8x (bônus equilibrado)
- * - Dex: 1.8x (bônus equilibrado)
- * - Will: 1.2x (bônus pequeno)
- * - Spi: 1.2x (bônus pequeno)
+ * - Str: 1.8x (bÃ´nus equilibrado)
+ * - Con: 1.8x (bÃ´nus equilibrado)
+ * - Dex: 1.8x (bÃ´nus equilibrado)
+ * - Will: 1.2x (bÃ´nus pequeno)
+ * - Spi: 1.2x (bÃ´nus pequeno)
  * - Mnd: 1.0x (neutro)
  */
 public class MartialArts implements IFightStyle {
@@ -105,7 +105,7 @@ public class MartialArts implements IFightStyle {
     
     @Override
     public String getStyleDescription() {
-        return "Estilo equilibrado e versátil. Bom em vários aspectos mas não se destaca em nenhum.";
+        return "Estilo equilibrado e versÃ¡til. Bom em vÃ¡rios aspectos mas nÃ£o se destaca em nenhum.";
     }
     
     @Override

@@ -3,11 +3,11 @@ package com.dragonblockinfinity.race;
 import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 
 /**
- * Raça Saiyajin
+ * RaÃ§a Saiyajin
  * Guerreiros natos com grande potencial de poder
  * 
- * Stats Base: Força alta, Constituição alta
- * Ki Máximo: 5000 base
+ * Stats Base: ForÃ§a alta, ConstituiÃ§Ã£o alta
+ * Ki MÃ¡ximo: 5000 base
  * Multiplicador de Ki: 1.5x
  * Estilo de Luta: Warrior (corpo a corpo)
  */
@@ -77,7 +77,7 @@ public class Saiyan implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Guerreiros natos com grande potencial de poder e transformações";
+        return "Guerreiros natos com grande potencial de poder e transformaÃ§Ãµes";
     }
     
     @Override

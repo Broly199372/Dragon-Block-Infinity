@@ -84,7 +84,7 @@ public class PlayerKiManager {
         return kiPercentage >= percent;
     }
     
-    // ===== REGENERAÇÃO =====
+    // ===== REGENERAÃÃO =====
     /**
      * Ki regenera 1% a cada X ticks
      */

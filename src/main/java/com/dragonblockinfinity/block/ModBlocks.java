@@ -29,7 +29,7 @@ public class ModBlocks {
         // Registrar blocos
         BLOCKS.register(bus);
 
-        // Registrar BlockItems para aparecer no inventário — adiciona ao DeferredRegister de itens
+        // Registrar BlockItems para aparecer no inventÃ¡rio â adiciona ao DeferredRegister de itens
         ModItems.ITEMS.register("dirty_stone", () -> new BlockItem(DIRTY_STONE.get(), new Item.Properties()));
     }
 }

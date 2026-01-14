@@ -3,11 +3,11 @@ package com.dragonblockinfinity.race;
 import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 
 /**
- * Raça Android
- * Tecnológico e perfeito com grande poder constante
+ * RaÃ§a Android
+ * TecnolÃ³gico e perfeito com grande poder constante
  * 
- * Stats Base: Força alta, Destreza alta
- * Ki Máximo: 6000 base (maior de todos!)
+ * Stats Base: ForÃ§a alta, Destreza alta
+ * Ki MÃ¡ximo: 6000 base (maior de todos!)
  * Multiplicador de Ki: 2.0x
  * Estilo de Luta: Warrior (combate direto)
  */
@@ -77,7 +77,7 @@ public class Android implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Tecnológico e perfeito com poder constante e altíssimo Ki máximo";
+        return "TecnolÃ³gico e perfeito com poder constante e altÃ­ssimo Ki mÃ¡ximo";
     }
     
     @Override

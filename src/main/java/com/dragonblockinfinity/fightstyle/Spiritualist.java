@@ -2,23 +2,23 @@ package com.dragonblockinfinity.fightstyle;
 
 /**
  * Estilo Espiritualista
- * Focado em Ki e ataques mágicos
+ * Focado em Ki e ataques mÃ¡gicos
  * 
  * Stats Base:
  * - Str: 8 (baixo)
  * - Con: 9 (baixo)
- * - Dex: 10 (médio)
+ * - Dex: 10 (mÃ©dio)
  * - Will: 13 (alto)
  * - Spi: 14 (muito alto)
- * - Mnd: 11 (acima da média)
+ * - Mnd: 11 (acima da mÃ©dia)
  * 
  * Multiplicadores:
- * - Spi: 2.2x (bônus máximo)
- * - Will: 2.0x (bônus máximo)
+ * - Spi: 2.2x (bÃ´nus mÃ¡ximo)
+ * - Will: 2.0x (bÃ´nus mÃ¡ximo)
  * - Dex: 1.2x
  * - Mnd: 1.0x
  * - Con: 0.8x (penalidade)
- * - Str: 0.5x (penalidade máxima)
+ * - Str: 0.5x (penalidade mÃ¡xima)
  */
 public class Spiritualist implements IFightStyle {
     
@@ -105,7 +105,7 @@ public class Spiritualist implements IFightStyle {
     
     @Override
     public String getStyleDescription() {
-        return "Focado em Ki e ataques mágicos. Excelente em ofensiva mágica mas fraco em combate corpo a corpo.";
+        return "Focado em Ki e ataques mÃ¡gicos. Excelente em ofensiva mÃ¡gica mas fraco em combate corpo a corpo.";
     }
     
     @Override

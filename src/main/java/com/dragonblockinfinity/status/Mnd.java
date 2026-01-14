@@ -1,11 +1,11 @@
 package com.dragonblockinfinity.status;
 
 /**
- * Classe para gerenciar Mente (Mnd) - BÁSICO
- * Mnd controla inteligência, precisão e detecção
+ * Classe para gerenciar Mente (Mnd) - BÃSICO
+ * Mnd controla inteligÃªncia, precisÃ£o e detecÃ§Ã£o
  */
 public class Mnd {
-    private int mind;  // Mente - inteligência
+    private int mind;  // Mente - inteligÃªncia
     
     public Mnd(int mind) {
         this.mind = mind;
@@ -25,26 +25,26 @@ public class Mnd {
         this.mind += value;
     }
     
-    // ===== BÁSICO =====
+    // ===== BÃSICO =====
     /**
-     * Bônus de precisão
-     * Fórmula: Mind * 0.5%
+     * BÃ´nus de precisÃ£o
+     * FÃ³rmula: Mind * 0.5%
      */
     public double getAccuracy() {
         return Math.min(mind * 0.5, 100.0);
     }
     
     /**
-     * Bônus de detecção (detectar inimigos ocultos)
-     * Fórmula: Mind * 1%
+     * BÃ´nus de detecÃ§Ã£o (detectar inimigos ocultos)
+     * FÃ³rmula: Mind * 1%
      */
     public double getDetectionRange() {
         return mind * 1.0;
     }
     
     /**
-     * Resistência a confusão
-     * Fórmula: Mind * 1%
+     * ResistÃªncia a confusÃ£o
+     * FÃ³rmula: Mind * 1%
      */
     public double getConfusionResistance() {
         return Math.min(mind * 1.0, 100.0);
@@ -54,9 +54,9 @@ public class Mnd {
     public String toString() {
         return "Mnd{" +
                 "Mente=" + mind +
-                ", Precisão=" + String.format("%.1f", getAccuracy()) + "%" +
-                ", DetecçãoAlcance=" + String.format("%.1f", getDetectionRange()) + "m" +
-                ", ResistênciàConfusão=" + String.format("%.1f", getConfusionResistance()) + "%" +
+                ", PrecisÃ£o=" + String.format("%.1f", getAccuracy()) + "%" +
+                ", DetecÃ§Ã£oAlcance=" + String.format("%.1f", getDetectionRange()) + "m" +
+                ", ResistÃªnciÃ ConfusÃ£o=" + String.format("%.1f", getConfusionResistance()) + "%" +
                 '}';
     }
 }

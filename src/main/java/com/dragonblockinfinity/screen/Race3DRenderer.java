@@ -14,12 +14,12 @@ import com.dragonblockinfinity.screen.CustomizationData;
 import org.joml.Quaternionf;
 
 /**
- * Renderizador 3D REAL para modelos das raças no menu de seleção
+ * Renderizador 3D REAL para modelos das raÃ§as no menu de seleÃ§Ã£o
  */
 public class Race3DRenderer {
     
     /**
-     * Renderiza um modelo 3D texturizado da raça com renderização REAL
+     * Renderiza um modelo 3D texturizado da raÃ§a com renderizaÃ§Ã£o REAL
      */
     public static void renderRaceModel(GuiGraphics graphics, int x, int y, int width, int height,
                                        RaceEnum race, float rotationYaw, float rotationPitch) {
@@ -30,7 +30,7 @@ public class Race3DRenderer {
         poseStack.translate(x + width / 2.0, y + height, 0);
         poseStack.scale(width / 32.0f, width / 32.0f, width / 32.0f);
         
-        // Rotações
+        // RotaÃ§Ãµes
         poseStack.mulPose(Axis.XP.rotationDegrees(180.0f));
         poseStack.mulPose(Axis.YP.rotationDegrees(rotationYaw));
         poseStack.mulPose(Axis.XP.rotationDegrees(rotationPitch));
@@ -41,7 +41,7 @@ public class Race3DRenderer {
             EntityRenderDispatcher dispatcher = mc.getEntityRenderDispatcher();
             MultiBufferSource.BufferSource bufferSource = mc.renderBuffers().bufferSource();
             
-            // Configurar iluminação
+            // Configurar iluminaÃ§Ã£o
             RenderSystem.setShaderLights(
                 new org.joml.Vector3f(0.2f, 1.0f, -0.2f),
                 new org.joml.Vector3f(-0.2f, 1.0f, 0.2f)
@@ -50,8 +50,8 @@ public class Race3DRenderer {
             // Renderizar entidade (usando player como base)
             LivingEntity entity = mc.player;
             
-            // TODO: Aqui você pode criar uma entidade customizada para cada raça
-            // Por enquanto usa o player como referência
+            // TODO: Aqui vocÃª pode criar uma entidade customizada para cada raÃ§a
+            // Por enquanto usa o player como referÃªncia
             dispatcher.render(entity, 0, 0, 0, 0, 0, poseStack, bufferSource, 15728880);
             bufferSource.endBatch();
         }
@@ -63,7 +63,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Renderiza apenas a textura da raça como sprite (fallback)
+     * Renderiza apenas a textura da raÃ§a como sprite (fallback)
      */
     public static void renderRaceTexture(GuiGraphics graphics, int x, int y, int width, int height,
                                          RaceEnum race) {
@@ -73,7 +73,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Renderiza olhos com posições específicas por raça
+     * Renderiza olhos com posiÃ§Ãµes especÃ­ficas por raÃ§a
      */
     private static void renderEyes(GuiGraphics graphics, int x, int y, int width, int height, RaceEnum race) {
         String eyeLeft = getEyeTexture(CustomizationData.getSelectedEyes(), true);
@@ -81,16 +81,16 @@ public class Race3DRenderer {
         
         if (eyeLeft == null || eyeRight == null) return;
         
-        ResourceLocation eyeL = new ResourceLocation("dragonblockinfinity", "textures/entity/customização/eye/" + eyeLeft);
-        ResourceLocation eyeR = new ResourceLocation("dragonblockinfinity", "textures/entity/customização/eye/" + eyeRight);
+        ResourceLocation eyeL = new ResourceLocation("dragonblockinfinity", "textures/entity/customizaÃ§Ã£o/eye/" + eyeLeft);
+        ResourceLocation eyeR = new ResourceLocation("dragonblockinfinity", "textures/entity/customizaÃ§Ã£o/eye/" + eyeRight);
         
-        // Obter offset de olhos por raça
+        // Obter offset de olhos por raÃ§a
         EyePosition eyePos = getEyePositionForRace(race, width, height);
         
         int centerX = x + width / 2;
         int centerY = y + height / 2;
         
-        // Posições dos olhos com offset customizado por raça
+        // PosiÃ§Ãµes dos olhos com offset customizado por raÃ§a
         int leftEyeX = centerX + eyePos.leftOffsetX;
         int rightEyeX = centerX + eyePos.rightOffsetX;
         int eyeY = centerY + eyePos.offsetY;
@@ -100,7 +100,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Classe para armazenar posição dos olhos
+     * Classe para armazenar posiÃ§Ã£o dos olhos
      */
     private static class EyePosition {
         int leftOffsetX;
@@ -119,7 +119,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Obtém posição dos olhos customizada por raça
+     * ObtÃ©m posiÃ§Ã£o dos olhos customizada por raÃ§a
      */
     private static EyePosition getEyePositionForRace(RaceEnum race, int modelWidth, int modelHeight) {
         int baseEyeW = Math.max(8, modelWidth / 8);
@@ -153,7 +153,7 @@ public class Race3DRenderer {
             case ARCONSIAN -> new EyePosition(
                 -(modelWidth / 5) - baseEyeW / 2,   // Olhos mais afastados
                 (modelWidth / 5) - baseEyeW / 2,
-                -modelHeight / 3,                   // Mais alto na cabeça
+                -modelHeight / 3,                   // Mais alto na cabeÃ§a
                 (int)(baseEyeW * 1.2),              // Olhos maiores
                 (int)(baseEyeH * 1.2)
             );
@@ -169,7 +169,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Obtém o arquivo de textura para cada raça
+     * ObtÃ©m o arquivo de textura para cada raÃ§a
      */
     private static String getTextureForRace(RaceEnum race) {
         return switch (race) {
@@ -182,7 +182,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Obtém a textura do corpo para cada raça
+     * ObtÃ©m a textura do corpo para cada raÃ§a
      */
     public static String getBodyTextureForRace(RaceEnum race) {
         return switch (race) {
@@ -193,7 +193,7 @@ public class Race3DRenderer {
     }
     
     /**
-     * Obtém textura dos olhos
+     * ObtÃ©m textura dos olhos
      */
     private static String getEyeTexture(int index, boolean left) {
         if (index < 0) return null;

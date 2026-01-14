@@ -3,7 +3,7 @@ package com.dragonblockinfinity.screen;
 import com.dragonblockinfinity.race.RaceEnum;
 
 /**
- * Dados simples de customização mantidos no cliente.
+ * Dados simples de customizaÃ§Ã£o mantidos no cliente.
  */
 public class CustomizationData {
 

@@ -10,19 +10,28 @@ import net.minecraftforge.event.TickEvent.ClientTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
-import com.dragonblockinfinity.screen.CustomizationScreen;
 
-/**
- * Classe para manipular eventos de teclado
- */
+import com.dragonblockinfinity.screen.MenuInicial1;
+
 @Mod.EventBusSubscriber(modid = "dragonblockinfinity", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class KeyHandler {
 
+    public static final KeyMapping OPEN_MENU = new KeyMapping(
+            "key.dragonblockinfinity.menu",
+            InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_G,
+            "key.categories.dragonblockinfinity"
+    );
+
+    @SubscribeEvent
+    public static void onRegisterKeys(RegisterKeyMappingsEvent event) {
+        event.register(OPEN_MENU);
+    }
+
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent event) {
-        if (Minecraft.getInstance().screen == null && KeyBindings.OPEN_CUSTOMIZATION_KEY.consumeClick()) {
-            Minecraft.getInstance().setScreen(new CustomizationScreen());
+        if (Minecraft.getInstance().screen == null && OPEN_MENU.consumeClick()) {
+            Minecraft.getInstance().setScreen(new MenuInicial1());
         }
     }
 }
-

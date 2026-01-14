@@ -3,32 +3,32 @@ package com.dragonblockinfinity.race;
 import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 
 /**
- * Interface base para todas as raças
+ * Interface base para todas as raÃ§as
  */
 public interface IRace {
     
     /**
-     * Retorna o Ki máximo base da raça
+     * Retorna o Ki mÃ¡ximo base da raÃ§a
      */
     int getMaxKiBase();
     
     /**
-     * Retorna o multiplicador de Ki (afeta Ki máximo)
+     * Retorna o multiplicador de Ki (afeta Ki mÃ¡ximo)
      */
     double getKiMultiplier();
     
     /**
-     * Retorna o estilo de luta preferido da raça
+     * Retorna o estilo de luta preferido da raÃ§a
      */
     FightStyleEnum getPreferredFightStyle();
     
     /**
-     * Retorna stat base de Força
+     * Retorna stat base de ForÃ§a
      */
     int getBaseStrength();
     
     /**
-     * Retorna stat base de Constituição
+     * Retorna stat base de ConstituiÃ§Ã£o
      */
     int getBaseConstitution();
     
@@ -43,7 +43,7 @@ public interface IRace {
     int getBaseWillpower();
     
     /**
-     * Retorna stat base de Espírito
+     * Retorna stat base de EspÃ­rito
      */
     int getBaseSpirit();
     
@@ -53,17 +53,17 @@ public interface IRace {
     int getBaseMind();
     
     /**
-     * Retorna o nome da raça
+     * Retorna o nome da raÃ§a
      */
     String getRaceName();
     
     /**
-     * Retorna a descrição da raça
+     * Retorna a descriÃ§Ã£o da raÃ§a
      */
     String getRaceDescription();
     
     /**
-     * Calcula Ki máximo total da raça
+     * Calcula Ki mÃ¡ximo total da raÃ§a
      */
     int calculateMaxKi();
 }

@@ -44,7 +44,7 @@ public class CustomColorPickerScreen extends Screen {
         }).bounds(midX + 10, midY + 80, btnW, btnH).build());
 
         paletteX = (this.width - paletteW) / 2;
-        paletteY = midY - 10 - paletteH - 40; // posição acima dos sliders
+        paletteY = midY - 10 - paletteH - 40; // posiÃ§Ã£o acima dos sliders
     }
 
     @Override
@@ -93,7 +93,7 @@ public class CustomColorPickerScreen extends Screen {
         int panelY = midY - panelH / 2;
         graphics.fill(panelX, panelY, panelX + panelW, panelY + panelH, 0xCC000000);
 
-        graphics.drawCenteredString(this.font, Component.literal("Selecionar cor base da raça"), midX, panelY + 8, 0xFFFFFF);
+        graphics.drawCenteredString(this.font, Component.literal("Selecionar cor base da raÃ§a"), midX, panelY + 8, 0xFFFFFF);
 
         // Desenhar paleta hue -> rainbow (dentro do painel)
         for (int i = 0; i < paletteW; i++) {

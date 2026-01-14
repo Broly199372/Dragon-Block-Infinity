@@ -4,9 +4,9 @@ import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 import com.dragonblockinfinity.status.*;
 
 /**
- * Raça Arcosian
- * Tirano intergaláctico com poder lendário e ki colossal
- * Força: Ki muito alto, stats físicos elevados
+ * RaÃ§a Arcosian
+ * Tirano intergalÃ¡ctico com poder lendÃ¡rio e ki colossal
+ * ForÃ§a: Ki muito alto, stats fÃ­sicos elevados
  */
 public class Arcosian implements IRace {
     
@@ -30,13 +30,13 @@ public class Arcosian implements IRace {
     
     @Override
     public int getBaseStrength() {
-        // Força excepcional, rival de Saiyajin
+        // ForÃ§a excepcional, rival de Saiyajin
         return 14;
     }
     
     @Override
     public int getBaseConstitution() {
-        // Resistência comparável a Saiyajin
+        // ResistÃªncia comparÃ¡vel a Saiyajin
         return 13;
     }
     
@@ -48,19 +48,19 @@ public class Arcosian implements IRace {
     
     @Override
     public int getBaseWillpower() {
-        // Vontade comparável
+        // Vontade comparÃ¡vel
         return 9;
     }
     
     @Override
     public int getBaseSpirit() {
-        // Espírito intermediário
+        // EspÃ­rito intermediÃ¡rio
         return 9;
     }
     
     @Override
     public int getBaseMind() {
-        // Mente moderada, tático
+        // Mente moderada, tÃ¡tico
         return 10;
     }
     
@@ -71,7 +71,7 @@ public class Arcosian implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Tirano intergaláctico com poder lendário";
+        return "Tirano intergalÃ¡ctico com poder lendÃ¡rio";
     }
     
     @Override

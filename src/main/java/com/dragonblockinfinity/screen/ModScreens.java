@@ -9,6 +9,6 @@ public class ModScreens {
      * Registra todas as telas customizadas do mod
      */
     public static void register() {
-        // Telas serão registradas aqui
+        // Telas serÃ£o registradas aqui
     }
 }

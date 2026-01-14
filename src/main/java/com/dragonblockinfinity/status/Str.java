@@ -1,26 +1,26 @@
 package com.dragonblockinfinity.status;
 
 /**
- * Classe para gerenciar o atributo Força (Str)
+ * Classe para gerenciar o atributo ForÃ§a (Str)
  * Str consome Stamina para fazer dano
- * Quanto maior Str em relação a Con, maior o dano mas maior o consumo
+ * Quanto maior Str em relaÃ§Ã£o a Con, maior o dano mas maior o consumo
  */
 public class Str {
-    private int strength;      // Força - aumenta dano
-    private int constitution;  // Constituição - limita consumo de Stamina
+    private int strength;      // ForÃ§a - aumenta dano
+    private int constitution;  // ConstituiÃ§Ã£o - limita consumo de Stamina
     private int currentStamina;    // Stamina atual
-    private int maxStamina;    // Stamina máxima
+    private int maxStamina;    // Stamina mÃ¡xima
     
     // ===== HABILIDADE SECRETA: MODO BERSERK =====
-    private int berserkCharge;     // Acúmulo de poder (0-100)
-    private int maxBerserkCharge;  // Máximo de acúmulo (100)
-    private boolean isBerserk;     // Está em modo berserk?
+    private int berserkCharge;     // AcÃºmulo de poder (0-100)
+    private int maxBerserkCharge;  // MÃ¡ximo de acÃºmulo (100)
+    private boolean isBerserk;     // EstÃ¡ em modo berserk?
     private double berserkDamageMultiplier;  // Multiplicador de dano em berserk
     
     public Str(int constitution) {
         this.strength = 10;
         this.constitution = constitution;
-        this.maxStamina = constitution * 5; // Stamina máxima = Con * 5
+        this.maxStamina = constitution * 5; // Stamina mÃ¡xima = Con * 5
         this.currentStamina = maxStamina;
         
         // Habilidade Secreta
@@ -61,7 +61,7 @@ public class Str {
         this.currentStamina = Math.max(0, Math.min(stamina, maxStamina));
     }
     
-    // ===== ADIÇÕES =====
+    // ===== ADIÃÃES =====
     public void addStrength(int value) {
         this.strength += value;
     }
@@ -74,18 +74,18 @@ public class Str {
         this.currentStamina = Math.max(0, currentStamina - value);
     }
     
-    // ===== CÁLCULOS DE DANO =====
+    // ===== CÃLCULOS DE DANO =====
     /**
-     * Calcula dano padrão quando Stamina = 0
-     * Fórmula: (Força * 0.5) + 2
+     * Calcula dano padrÃ£o quando Stamina = 0
+     * FÃ³rmula: (ForÃ§a * 0.5) + 2
      */
     public int getDefaultDamage() {
         return (int)(strength * 0.5) + 2;
     }
     
     /**
-     * Calcula o dano base da força quando tem stamina
-     * Fórmula: (Força * 1.5) + 5
+     * Calcula o dano base da forÃ§a quando tem stamina
+     * FÃ³rmula: (ForÃ§a * 1.5) + 5
      */
     public int getBaseDamage() {
         if (currentStamina == 0) {
@@ -95,9 +95,9 @@ public class Str {
     }
     
     /**
-     * Calcula consumo de Stamina baseado na diferença Str - Con
-     * Fórmula: 5 + (Str - Con) * 0.5
-     * Mínimo de 3 de consumo
+     * Calcula consumo de Stamina baseado na diferenÃ§a Str - Con
+     * FÃ³rmula: 5 + (Str - Con) * 0.5
+     * MÃ­nimo de 3 de consumo
      */
     public int getStaminaCost() {
         int difference = strength - constitution;
@@ -112,7 +112,7 @@ public class Str {
     public int calculateDamageWithStamina(int staminaCost) {
         int baseDamage = getBaseDamage();
         
-        // Se não tem stamina suficiente, faz dano padrão
+        // Se nÃ£o tem stamina suficiente, faz dano padrÃ£o
         if (currentStamina < staminaCost) {
             return getDefaultDamage();
         }
@@ -124,7 +124,7 @@ public class Str {
     
     /**
      * Executa um ataque consumindo stamina
-     * Retorna o dano feito, ou dano padrão se não tiver stamina
+     * Retorna o dano feito, ou dano padrÃ£o se nÃ£o tiver stamina
      */
     public int executeAttack() {
         int staminaCost = getStaminaCost();
@@ -148,11 +148,11 @@ public class Str {
     @Override
     public String toString() {
         return "Str{" +
-                "Força=" + strength +
-                ", Constituição=" + constitution +
+                "ForÃ§a=" + strength +
+                ", ConstituiÃ§Ã£o=" + constitution +
                 ", Stamina=" + currentStamina + "/" + maxStamina +
                 ", DanoBase=" + getBaseDamage() +
-                ", DanoPadrão=" + getDefaultDamage() +
+                ", DanoPadrÃ£o=" + getDefaultDamage() +
                 ", CustoStamina=" + getStaminaCost() +
                 ", BerserkCharge=" + berserkCharge + "/" + maxBerserkCharge +
                 ", Berserk=" + (isBerserk ? "ATIVO" : "Inativo") +
@@ -168,8 +168,8 @@ public class Str {
      * Cada ponto de Berserk aumenta 1% de dano
      * 
      * Em Berserk:
-     * - Dano aumenta em até 100% (2x)
-     * - Consumo de Stamina é reduzido em 50%
+     * - Dano aumenta em atÃ© 100% (2x)
+     * - Consumo de Stamina Ã© reduzido em 50%
      * - Tempo limitado (precisa gastar a carga)
      */
     
@@ -190,7 +190,7 @@ public class Str {
      * Quanto maior o dano levado, mais charge ganha
      */
     public void accumulateBerserkCharge(int damageReceived) {
-        if (isBerserk) return; // Não acumula em berserk
+        if (isBerserk) return; // NÃ£o acumula em berserk
         
         // Acumula 2 pontos de charge por cada ponto de dano levado
         int chargeGain = Math.min(damageReceived * 2, maxBerserkCharge - berserkCharge);
@@ -208,7 +208,7 @@ public class Str {
      */
     private void activateBerserk() {
         isBerserk = true;
-        // Multiplicador varia de 1.0 (0 charge) até 2.0 (100 charge)
+        // Multiplicador varia de 1.0 (0 charge) atÃ© 2.0 (100 charge)
         berserkDamageMultiplier = 1.0 + (berserkCharge / (double) maxBerserkCharge);
     }
     
@@ -233,7 +233,7 @@ public class Str {
      */
     public int executeBerserkAttack() {
         if (!isBerserk || berserkCharge <= 0) {
-            return executeAttack(); // Ataque normal se não está em berserk
+            return executeAttack(); // Ataque normal se nÃ£o estÃ¡ em berserk
         }
         
         int baseDamage = getBaseDamage();
@@ -246,7 +246,7 @@ public class Str {
         }
         
         // Consome toda a carga de Berserk
-        int damageBonus = (int)(strength * (berserkCharge / 10.0)); // Bônus baseado na carga
+        int damageBonus = (int)(strength * (berserkCharge / 10.0)); // BÃ´nus baseado na carga
         berserkCharge = 0;
         isBerserk = false;
         berserkDamageMultiplier = 1.0;
@@ -264,14 +264,14 @@ public class Str {
     }
     
     /**
-     * Verifica se pode ativar Berserk (está em 100% de carga)
+     * Verifica se pode ativar Berserk (estÃ¡ em 100% de carga)
      */
     public boolean canActivateBerserk() {
         return berserkCharge >= maxBerserkCharge;
     }
     
     /**
-     * Mostra informações do Berserk
+     * Mostra informaÃ§Ãµes do Berserk
      */
     public String getBerserkInfo() {
         return "=== MODO BERSERK (HABILIDADE SECRETA) ===\n" +

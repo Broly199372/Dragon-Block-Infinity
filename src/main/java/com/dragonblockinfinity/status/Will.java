@@ -2,11 +2,11 @@ package com.dragonblockinfinity.status;
 
 /**
  * Classe para gerenciar Vontade (Will)
- * Will controla o dano de Ki (ataques de energia) e resistência mental
+ * Will controla o dano de Ki (ataques de energia) e resistÃªncia mental
  */
 public class Will {
     private int willpower;      // Vontade - aumenta dano de Ki
-    private int spiritLevel;    // Nível de espírito (referência)
+    private int spiritLevel;    // NÃ­vel de espÃ­rito (referÃªncia)
     
     public Will(int willpower, int spirit) {
         this.willpower = willpower;
@@ -38,7 +38,7 @@ public class Will {
     // ===== DANO DE KI =====
     /**
      * Calcula dano base de ataque de Ki (Ki Blast, Foice Attack, etc)
-     * Fórmula: (Will * 2) + 10
+     * FÃ³rmula: (Will * 2) + 10
      */
     public int getKiBlastDamage() {
         return (willpower * 2) + 10;
@@ -46,7 +46,7 @@ public class Will {
     
     /**
      * Calcula custo de Ki para executar um ataque
-     * Fórmula: 20 + (Will / 2)
+     * FÃ³rmula: 20 + (Will / 2)
      */
     public int getKiCost() {
         return 20 + (willpower / 2);
@@ -55,7 +55,7 @@ public class Will {
     /**
      * Calcula dano do Foice Attack (ataque mais forte)
      * Custa mais Ki e faz mais dano
-     * Fórmula: Dano de Ki * 2.5
+     * FÃ³rmula: Dano de Ki * 2.5
      */
     public int getFoiceAttackDamage() {
         return (int)(getKiBlastDamage() * 2.5);
@@ -69,10 +69,10 @@ public class Will {
         return (int)(getKiCost() * 2.5);
     }
     
-    // ===== RESISTÊNCIA MENTAL =====
+    // ===== RESISTÃNCIA MENTAL =====
     /**
-     * Resistência a efeitos de controle mental
-     * Fórmula: Will * 2%
+     * ResistÃªncia a efeitos de controle mental
+     * FÃ³rmula: Will * 2%
      */
     public double getMentalResistance() {
         return Math.min(willpower * 2.0, 100.0);
@@ -93,7 +93,7 @@ public class Will {
                 ", CustoKi=" + getKiCost() +
                 ", DanoFoice=" + getFoiceAttackDamage() +
                 ", CustoFoice=" + getFoiceAttackKiCost() +
-                ", ResistênciaMental=" + String.format("%.1f", getMentalResistance()) + "%" +
+                ", ResistÃªnciaMental=" + String.format("%.1f", getMentalResistance()) + "%" +
                 '}';
     }
 }

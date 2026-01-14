@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Registro central de todos os estilos de luta disponíveis
- * Gerencia instâncias e acesso aos estilos
+ * Registro central de todos os estilos de luta disponÃ­veis
+ * Gerencia instÃ¢ncias e acesso aos estilos
  */
 public class FightStyleRegistry {
     
     private static final Map<FightStyleEnum, IFightStyle> REGISTRY = new HashMap<>();
     
-    // Instâncias dos estilos
+    // InstÃ¢ncias dos estilos
     private static final Spiritualist SPIRITUALIST_INSTANCE = new Spiritualist();
     private static final Warrior WARRIOR_INSTANCE = new Warrior();
     private static final MartialArts MARTIAL_ARTS_INSTANCE = new MartialArts();
@@ -24,12 +24,12 @@ public class FightStyleRegistry {
     }
     
     /**
-     * Retorna a instância do estilo baseado no enum
+     * Retorna a instÃ¢ncia do estilo baseado no enum
      */
     public static IFightStyle getStyle(FightStyleEnum style) {
         IFightStyle fightStyle = REGISTRY.get(style);
         if (fightStyle == null) {
-            throw new IllegalArgumentException("Estilo de luta não registrado: " + style);
+            throw new IllegalArgumentException("Estilo de luta nÃ£o registrado: " + style);
         }
         return fightStyle;
     }
@@ -63,55 +63,55 @@ public class FightStyleRegistry {
     }
     
     /**
-     * Retorna informações sobre todos os estilos
+     * Retorna informaÃ§Ãµes sobre todos os estilos
      */
     public static String getAllStylesInfo() {
-        StringBuilder sb = new StringBuilder("=== ESTILOS DE LUTA DISPONÍVEIS ===\n\n");
+        StringBuilder sb = new StringBuilder("=== ESTILOS DE LUTA DISPONÃVEIS ===\n\n");
         
         for (FightStyleEnum enum_style : FightStyleEnum.values()) {
             IFightStyle style = getStyle(enum_style);
             
-            sb.append("【 ").append(style.getStyleName().toUpperCase()).append(" 】\n");
-            sb.append("Descrição: ").append(style.getStyleDescription()).append("\n");
+            sb.append("ã ").append(style.getStyleName().toUpperCase()).append(" ã\n");
+            sb.append("DescriÃ§Ã£o: ").append(style.getStyleDescription()).append("\n");
             sb.append("Stats Base:\n");
             sb.append("  Str: ").append(style.getBaseStrength())
-                    .append(" (×").append(style.getStrengthMultiplier()).append(")\n");
+                    .append(" (Ã").append(style.getStrengthMultiplier()).append(")\n");
             sb.append("  Con: ").append(style.getBaseConstitution())
-                    .append(" (×").append(style.getConstitutionMultiplier()).append(")\n");
+                    .append(" (Ã").append(style.getConstitutionMultiplier()).append(")\n");
             sb.append("  Dex: ").append(style.getBaseDexterity())
-                    .append(" (×").append(style.getDexterityMultiplier()).append(")\n");
+                    .append(" (Ã").append(style.getDexterityMultiplier()).append(")\n");
             sb.append("  Will: ").append(style.getBaseWillpower())
-                    .append(" (×").append(style.getWillMultiplier()).append(")\n");
+                    .append(" (Ã").append(style.getWillMultiplier()).append(")\n");
             sb.append("  Spi: ").append(style.getBaseSpirit())
-                    .append(" (×").append(style.getSpiritMultiplier()).append(")\n");
+                    .append(" (Ã").append(style.getSpiritMultiplier()).append(")\n");
             sb.append("  Mnd: ").append(style.getBaseMind())
-                    .append(" (×").append(style.getMindMultiplier()).append(")\n\n");
+                    .append(" (Ã").append(style.getMindMultiplier()).append(")\n\n");
         }
         
         return sb.toString();
     }
     
     /**
-     * Retorna info detalhada de um estilo específico
+     * Retorna info detalhada de um estilo especÃ­fico
      */
     public static String getStyleInfo(FightStyleEnum styleEnum) {
         IFightStyle style = getStyle(styleEnum);
         
         return "=== " + style.getStyleName().toUpperCase() + " ===\n" +
-                "Descrição: " + style.getStyleDescription() + "\n\n" +
+                "DescriÃ§Ã£o: " + style.getStyleDescription() + "\n\n" +
                 "Stats Base:\n" +
-                "  Força (Str): " + style.getBaseStrength() + "\n" +
-                "  Constituição (Con): " + style.getBaseConstitution() + "\n" +
+                "  ForÃ§a (Str): " + style.getBaseStrength() + "\n" +
+                "  ConstituiÃ§Ã£o (Con): " + style.getBaseConstitution() + "\n" +
                 "  Destreza (Dex): " + style.getBaseDexterity() + "\n" +
                 "  Vontade (Will): " + style.getBaseWillpower() + "\n" +
-                "  Espírito (Spi): " + style.getBaseSpirit() + "\n" +
+                "  EspÃ­rito (Spi): " + style.getBaseSpirit() + "\n" +
                 "  Mente (Mnd): " + style.getBaseMind() + "\n\n" +
                 "Multiplicadores de Stats:\n" +
-                "  Str: ×" + style.getStrengthMultiplier() + "\n" +
-                "  Con: ×" + style.getConstitutionMultiplier() + "\n" +
-                "  Dex: ×" + style.getDexterityMultiplier() + "\n" +
-                "  Will: ×" + style.getWillMultiplier() + "\n" +
-                "  Spi: ×" + style.getSpiritMultiplier() + "\n" +
-                "  Mnd: ×" + style.getMindMultiplier();
+                "  Str: Ã" + style.getStrengthMultiplier() + "\n" +
+                "  Con: Ã" + style.getConstitutionMultiplier() + "\n" +
+                "  Dex: Ã" + style.getDexterityMultiplier() + "\n" +
+                "  Will: Ã" + style.getWillMultiplier() + "\n" +
+                "  Spi: Ã" + style.getSpiritMultiplier() + "\n" +
+                "  Mnd: Ã" + style.getMindMultiplier();
     }
 }

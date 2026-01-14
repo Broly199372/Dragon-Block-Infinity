@@ -1,7 +1,7 @@
 package com.dragonblockinfinity.status;
 
 /**
- * Classe para gerenciar Constituição (Con) com vida, stamina e regeneração
+ * Classe para gerenciar ConstituiÃ§Ã£o (Con) com vida, stamina e regeneraÃ§Ã£o
  */
 public class Con {
     private int constitution;
@@ -10,9 +10,9 @@ public class Con {
     private int currentStamina;
     private int maxStamina;
     
-    // Regeneração
-    private double healthRegenRate;    // % da vida máxima por tick
-    private double staminaRegenRate;   // % da stamina máxima por tick
+    // RegeneraÃ§Ã£o
+    private double healthRegenRate;    // % da vida mÃ¡xima por tick
+    private double staminaRegenRate;   // % da stamina mÃ¡xima por tick
     
     public Con(int constitution) {
         this.constitution = constitution;
@@ -21,7 +21,7 @@ public class Con {
         this.maxStamina = constitution * 5;
         this.currentStamina = maxStamina;
         
-        // Taxa de regen padrão
+        // Taxa de regen padrÃ£o
         this.healthRegenRate = 0.01;    // 1% da vida por tick
         this.staminaRegenRate = 0.03;   // 3% da stamina por tick
     }
@@ -76,7 +76,7 @@ public class Con {
         this.staminaRegenRate = Math.max(0, Math.min(rate, 1.0)); // Limita entre 0 e 1
     }
     
-    // ===== ADIÇÕES =====
+    // ===== ADIÃÃES =====
     public void addConstitution(int value) {
         setConstitution(constitution + value);
     }
@@ -115,9 +115,9 @@ public class Con {
         return (double) currentStamina / maxStamina;
     }
     
-    // ===== REGENERAÇÃO =====
+    // ===== REGENERAÃÃO =====
     /**
-     * Regenera vida baseado na taxa de regeneração
+     * Regenera vida baseado na taxa de regeneraÃ§Ã£o
      * Retorna a quantidade de vida regenerada
      */
     public int regenerateHealth() {
@@ -127,7 +127,7 @@ public class Con {
     }
     
     /**
-     * Regenera stamina baseado na taxa de regeneração
+     * Regenera stamina baseado na taxa de regeneraÃ§Ã£o
      * Retorna a quantidade de stamina regenerada
      */
     public int regenerateStamina() {
@@ -146,7 +146,7 @@ public class Con {
     
     /**
      * Calcula quantidade de vida regenerada por segundo
-     * Baseado na taxa e constituição
+     * Baseado na taxa e constituiÃ§Ã£o
      */
     public int getHealthRegenPerSecond() {
         return (int)(maxHealth * healthRegenRate);
@@ -159,35 +159,35 @@ public class Con {
         return (int)(maxStamina * staminaRegenRate);
     }
     
-    // ===== BÔNUS =====
+    // ===== BÃNUS =====
     /**
-     * Bônus de vida: Con * 5
+     * BÃ´nus de vida: Con * 5
      */
     public int getLifeBonus() {
         return constitution * 5;
     }
     
     /**
-     * Bônus de stamina: Con * 5
+     * BÃ´nus de stamina: Con * 5
      */
     public int getStaminaBonus() {
         return constitution * 5;
     }
     
     /**
-     * Quanto maior a constituição, melhor a regen
+     * Quanto maior a constituiÃ§Ã£o, melhor a regen
      */
     public void boostRegenFromConstitution() {
         // Aumenta taxa de regen em 0.1% por ponto de Con
         double bonus = constitution * 0.001;
-        this.healthRegenRate = Math.min(healthRegenRate + bonus, 0.2);  // Máx 20%
-        this.staminaRegenRate = Math.min(staminaRegenRate + bonus, 0.3); // Máx 30%
+        this.healthRegenRate = Math.min(healthRegenRate + bonus, 0.2);  // MÃ¡x 20%
+        this.staminaRegenRate = Math.min(staminaRegenRate + bonus, 0.3); // MÃ¡x 30%
     }
     
     @Override
     public String toString() {
         return "Con{" +
-                "Constituição=" + constitution +
+                "ConstituiÃ§Ã£o=" + constitution +
                 ", Vida=" + currentHealth + "/" + maxHealth + 
                 " (" + String.format("%.1f", getHealthPercentage() * 100) + "%)" +
                 ", Stamina=" + currentStamina + "/" + maxStamina +

@@ -4,9 +4,9 @@ import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 import com.dragonblockinfinity.status.*;
 
 /**
- * Raça Half-Saiyan (metade-saiyajin)
- * Híbrido entre Saiyajim e Humano com potencial extraordinário
- * Força: Ki equilibrado, stats balanceados
+ * RaÃ§a Half-Saiyan (metade-saiyajin)
+ * HÃ­brido entre Saiyajim e Humano com potencial extraordinÃ¡rio
+ * ForÃ§a: Ki equilibrado, stats balanceados
  */
 public class HalfSaiyan implements IRace {
     
@@ -18,7 +18,7 @@ public class HalfSaiyan implements IRace {
     
     @Override
     public double getKiMultiplier() {
-        // Multiplicador intermediário
+        // Multiplicador intermediÃ¡rio
         return 1.4;
     }
     
@@ -30,19 +30,19 @@ public class HalfSaiyan implements IRace {
     
     @Override
     public int getBaseStrength() {
-        // Força intermediária
+        // ForÃ§a intermediÃ¡ria
         return 12;
     }
     
     @Override
     public int getBaseConstitution() {
-        // Resistência equilibrada
+        // ResistÃªncia equilibrada
         return 11;
     }
     
     @Override
     public int getBaseDexterity() {
-        // Boa destreza, herança humana
+        // Boa destreza, heranÃ§a humana
         return 11;
     }
     
@@ -54,7 +54,7 @@ public class HalfSaiyan implements IRace {
     
     @Override
     public int getBaseSpirit() {
-        // Espírito moderado
+        // EspÃ­rito moderado
         return 11;
     }
     
@@ -71,7 +71,7 @@ public class HalfSaiyan implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Híbrido com potencial extraordinário";
+        return "HÃ­brido com potencial extraordinÃ¡rio";
     }
     
     @Override

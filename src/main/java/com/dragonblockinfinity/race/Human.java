@@ -3,11 +3,11 @@ package com.dragonblockinfinity.race;
 import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 
 /**
- * Raça Humano
- * Adaptável e determinado, grande potencial de aprendizado
+ * RaÃ§a Humano
+ * AdaptÃ¡vel e determinado, grande potencial de aprendizado
  * 
  * Stats Base: Equilibrados
- * Ki Máximo: 3000 base
+ * Ki MÃ¡ximo: 3000 base
  * Multiplicador de Ki: 1.0x
  * Estilo de Luta: Martial Arts (equilibrado)
  */
@@ -77,7 +77,7 @@ public class Human implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Adaptável e determinado com grande potencial de aprendizado";
+        return "AdaptÃ¡vel e determinado com grande potencial de aprendizado";
     }
     
     @Override

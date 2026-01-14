@@ -1,27 +1,27 @@
 package com.dragonblockinfinity.status;
 
 /**
- * Classe para gerenciar Espírito (Spi) - Ki Máximo
- * Spi controla a quantidade de Ki disponível
- * Habilidade Secreta: OPRESSÃO DE KI
- * - Causa lentidão no chão
+ * Classe para gerenciar EspÃ­rito (Spi) - Ki MÃ¡ximo
+ * Spi controla a quantidade de Ki disponÃ­vel
+ * Habilidade Secreta: OPRESSÃO DE KI
+ * - Causa lentidÃ£o no chÃ£o
  * - Impede o player de voar se o Spi for muito maior
  */
 public class Spi {
-    private int spirit;           // Espírito - Ki máximo
+    private int spirit;           // EspÃ­rito - Ki mÃ¡ximo
     private int currentKi;        // Ki atual
-    private int maxKi;            // Ki máximo
-    private double kiRegenRate;   // Taxa de regeneração de Ki por segundo
+    private int maxKi;            // Ki mÃ¡ximo
+    private double kiRegenRate;   // Taxa de regeneraÃ§Ã£o de Ki por segundo
     
-    // ===== HABILIDADE SECRETA: OPRESSÃO DE KI =====
-    private int oppressionCharge;      // Carga de opressão (0-100)
-    private int maxOppressionCharge;   // Máximo de carga (100)
-    private boolean isOppressing;      // Está oprimindo?
-    private double slowdownIntensity;  // Intensidade de lentidão (0-100%)
+    // ===== HABILIDADE SECRETA: OPRESSÃO DE KI =====
+    private int oppressionCharge;      // Carga de opressÃ£o (0-100)
+    private int maxOppressionCharge;   // MÃ¡ximo de carga (100)
+    private boolean isOppressing;      // EstÃ¡ oprimindo?
+    private double slowdownIntensity;  // Intensidade de lentidÃ£o (0-100%)
     
     public Spi(int spirit) {
         this.spirit = spirit;
-        this.maxKi = spirit * 10;  // Ki máximo = Spi * 10
+        this.maxKi = spirit * 10;  // Ki mÃ¡ximo = Spi * 10
         this.currentKi = maxKi;
         this.kiRegenRate = 0.5;    // 0.5% de regen por tick
         
@@ -88,17 +88,17 @@ public class Spi {
         return (double) currentKi / maxKi;
     }
     
-    // ===== HABILIDADE SECRETA: OPRESSÃO DE KI =====
+    // ===== HABILIDADE SECRETA: OPRESSÃO DE KI =====
     /**
-     * HABILIDADE SECRETA - OPRESSÃO DE KI
+     * HABILIDADE SECRETA - OPRESSÃO DE KI
      * 
-     * A opressão de Ki funciona baseada na diferença de Spi entre jogadores
-     * Quanto maior o Spi do jogador 1 em relação ao do jogador 2,
+     * A opressÃ£o de Ki funciona baseada na diferenÃ§a de Spi entre jogadores
+     * Quanto maior o Spi do jogador 1 em relaÃ§Ã£o ao do jogador 2,
      * mais ele consegue oprimir o outro
      * 
      * Efeitos:
-     * - Causa lentidão no chão (até 100% de redução de velocidade)
-     * - Impede o player oprimido de voar se a opressão for muito forte
+     * - Causa lentidÃ£o no chÃ£o (atÃ© 100% de reduÃ§Ã£o de velocidade)
+     * - Impede o player oprimido de voar se a opressÃ£o for muito forte
      * - Reduz a velocidade de regen de Ki do oprimido
      */
     
@@ -115,20 +115,20 @@ public class Spi {
     }
     
     /**
-     * Calcula o nível de opressão baseado na diferença de Spi
-     * Fórmula: (Spi próprio - Spi inimigo) / Spi próprio * 100
+     * Calcula o nÃ­vel de opressÃ£o baseado na diferenÃ§a de Spi
+     * FÃ³rmula: (Spi prÃ³prio - Spi inimigo) / Spi prÃ³prio * 100
      */
     public double calculateOppression(int enemySpi) {
         if (enemySpi <= 0) return 100.0;
         
         double difference = spirit - enemySpi;
-        if (difference <= 0) return 0.0; // Sem opressão se Spi for menor
+        if (difference <= 0) return 0.0; // Sem opressÃ£o se Spi for menor
         
         return Math.min(100.0, (difference / spirit) * 100);
     }
     
     /**
-     * Ativa a opressão de Ki contra um inimigo
+     * Ativa a opressÃ£o de Ki contra um inimigo
      * Requer bastante Ki para manter ativa
      */
     public boolean activateOppressionField(int enemySpi) {
@@ -142,7 +142,7 @@ public class Spi {
     }
     
     /**
-     * Desativa a opressão de Ki
+     * Desativa a opressÃ£o de Ki
      */
     public void deactivateOppressionField() {
         isOppressing = false;
@@ -151,13 +151,13 @@ public class Spi {
     }
     
     /**
-     * Mantém a opressão ativa consumindo Ki continuamente
-     * Quanto mais forte a opressão, mais Ki consome por tick
+     * MantÃ©m a opressÃ£o ativa consumindo Ki continuamente
+     * Quanto mais forte a opressÃ£o, mais Ki consome por tick
      */
     public void tickOppressionField() {
         if (!isOppressing) return;
         
-        // Consome Ki baseado na intensidade da opressão
+        // Consome Ki baseado na intensidade da opressÃ£o
         int kiCost = (int)(slowdownIntensity * 0.5);
         consumeKi(kiCost);
         
@@ -171,26 +171,26 @@ public class Spi {
     }
     
     /**
-     * Calcula quanto o player é desacelerado (0-1, onde 1 é 100% de lentidão)
-     * Quanto maior a opressão, mais lento fica
+     * Calcula quanto o player Ã© desacelerado (0-1, onde 1 Ã© 100% de lentidÃ£o)
+     * Quanto maior a opressÃ£o, mais lento fica
      */
     public double getMovementSpeedMultiplier(int enemySpi) {
         if (!isOppressing) return 1.0;
         
         double oppression = calculateOppression(enemySpi);
-        // Reduz velocidade de 0% até 80% baseado na opressão
+        // Reduz velocidade de 0% atÃ© 80% baseado na opressÃ£o
         return 1.0 - (oppression / 100.0 * 0.8);
     }
     
     /**
-     * Verifica se o player pode voar com essa opressão
-     * Se a opressão for >= 50%, não consegue voar
+     * Verifica se o player pode voar com essa opressÃ£o
+     * Se a opressÃ£o for >= 50%, nÃ£o consegue voar
      */
     public boolean canFly(int enemySpi) {
         if (!isOppressing) return true;
         
         double oppression = calculateOppression(enemySpi);
-        return oppression < 50.0; // Só consegue voar se opressão < 50%
+        return oppression < 50.0; // SÃ³ consegue voar se opressÃ£o < 50%
     }
     
     /**
@@ -200,32 +200,32 @@ public class Spi {
         if (!isOppressing) return 1.0;
         
         double oppression = calculateOppression(enemySpi);
-        // Reduz regen de 0% até 70% baseado na opressão
+        // Reduz regen de 0% atÃ© 70% baseado na opressÃ£o
         return 1.0 - (oppression / 100.0 * 0.7);
     }
     
     /**
-     * Mostra informações da opressão
+     * Mostra informaÃ§Ãµes da opressÃ£o
      */
     public String getOppressionInfo(int enemySpi) {
         double oppression = calculateOppression(enemySpi);
-        return "=== OPRESSÃO DE KI (HABILIDADE SECRETA) ===\n" +
-                "Spi Próprio: " + spirit + " | Spi Inimigo: " + enemySpi + "\n" +
-                "Nível de Opressão: " + String.format("%.1f", oppression) + "%\n" +
+        return "=== OPRESSÃO DE KI (HABILIDADE SECRETA) ===\n" +
+                "Spi PrÃ³prio: " + spirit + " | Spi Inimigo: " + enemySpi + "\n" +
+                "NÃ­vel de OpressÃ£o: " + String.format("%.1f", oppression) + "%\n" +
                 "Status: " + (isOppressing ? "ATIVA" : "Inativa") + "\n" +
-                "Lentidão do Inimigo: " + String.format("%.1f", (1.0 - getMovementSpeedMultiplier(enemySpi)) * 100) + "%\n" +
-                "Pode Voar: " + (canFly(enemySpi) ? "SIM" : "NÃO") + "\n" +
+                "LentidÃ£o do Inimigo: " + String.format("%.1f", (1.0 - getMovementSpeedMultiplier(enemySpi)) * 100) + "%\n" +
+                "Pode Voar: " + (canFly(enemySpi) ? "SIM" : "NÃO") + "\n" +
                 "Regen de Ki Reduzida: " + String.format("%.1f", (1.0 - getEnemyKiRegenPenalty(enemySpi)) * 100) + "%";
     }
     
     @Override
     public String toString() {
         return "Spi{" +
-                "Espírito=" + spirit +
+                "EspÃ­rito=" + spirit +
                 ", Ki=" + currentKi + "/" + maxKi +
                 " (" + String.format("%.1f", getKiPercentage() * 100) + "%)" +
                 ", RegenRate=" + kiRegenRate + "%" +
-                ", Opressão=" + (isOppressing ? "ATIVA (" + (int)slowdownIntensity + "%)" : "Inativa") +
+                ", OpressÃ£o=" + (isOppressing ? "ATIVA (" + (int)slowdownIntensity + "%)" : "Inativa") +
                 '}';
     }
 }

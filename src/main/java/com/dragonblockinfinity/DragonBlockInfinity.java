@@ -33,10 +33,10 @@ public class DragonBlockInfinity {
    }
 
    private void commonSetup(final FMLCommonSetupEvent event) {
-      // Configurações gerais do mod (execução do lado servidor/ambos)
+      // ConfiguraÃ§Ãµes gerais do mod (execuÃ§Ã£o do lado servidor/ambos)
    }
 
    private void clientSetup(final FMLClientSetupEvent event) {
-      // Inicializações específicas do cliente
+      // InicializaÃ§Ãµes especÃ­ficas do cliente
    }
 }

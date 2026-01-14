@@ -3,11 +3,11 @@ package com.dragonblockinfinity.race;
 import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 
 /**
- * Raça Majin
- * Mágica e poderosa com grande versatilidade
+ * RaÃ§a Majin
+ * MÃ¡gica e poderosa com grande versatilidade
  * 
- * Stats Base: Vontade alta, Constituição alta
- * Ki Máximo: 5500 base
+ * Stats Base: Vontade alta, ConstituiÃ§Ã£o alta
+ * Ki MÃ¡ximo: 5500 base
  * Multiplicador de Ki: 1.9x
  * Estilo de Luta: Spiritualist (magia)
  */
@@ -77,7 +77,7 @@ public class Majin implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Mágica e poderosa com grande versatilidade e poder mágico";
+        return "MÃ¡gica e poderosa com grande versatilidade e poder mÃ¡gico";
     }
     
     @Override

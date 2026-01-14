@@ -2,8 +2,8 @@ package com.dragonblockinfinity.status;
 
 /**
  * Classe para gerenciar Destreza (Dex)
- * Dex se relaciona com Str do inimigo para esquiva, redução de dano e knockback
- * Quanto maior Dex em relação a Str do inimigo, mais imune fica
+ * Dex se relaciona com Str do inimigo para esquiva, reduÃ§Ã£o de dano e knockback
+ * Quanto maior Dex em relaÃ§Ã£o a Str do inimigo, mais imune fica
  */
 public class Dex {
     private int dexterity;
@@ -26,10 +26,10 @@ public class Dex {
         this.dexterity += value;
     }
     
-    // ===== CÁLCULOS DE RELAÇÃO DEX vs STR =====
+    // ===== CÃLCULOS DE RELAÃÃO DEX vs STR =====
     /**
-     * Calcula o multiplicador de Dex em relação a Str do inimigo
-     * Fórmula: Dex / Str do inimigo
+     * Calcula o multiplicador de Dex em relaÃ§Ã£o a Str do inimigo
+     * FÃ³rmula: Dex / Str do inimigo
      */
     public double getDexMultiplier(int enemyStrength) {
         if (enemyStrength <= 0) return 999; // Sem inimigo, defesa infinita
@@ -37,7 +37,7 @@ public class Dex {
     }
     
     /**
-     * Retorna uma descrição do nível de vantagem
+     * Retorna uma descriÃ§Ã£o do nÃ­vel de vantagem
      */
     public String getDexAdvantageLevel(int enemyStrength) {
         double multiplier = getDexMultiplier(enemyStrength);
@@ -51,7 +51,7 @@ public class Dex {
     
     // ===== CHANCE DE ESQUIVA =====
     /**
-     * Calcula chance de esquiva baseado na relação Dex vs Str do inimigo
+     * Calcula chance de esquiva baseado na relaÃ§Ã£o Dex vs Str do inimigo
      * 
      * Multiplicador < 1.5x: 0% de esquiva
      * Multiplicador 1.5x: 25% de esquiva
@@ -79,14 +79,14 @@ public class Dex {
         }
     }
     
-    // ===== REDUÇÃO DE DANO =====
+    // ===== REDUÃÃO DE DANO =====
     /**
-     * Calcula redução de dano baseado na relação Dex vs Str
+     * Calcula reduÃ§Ã£o de dano baseado na relaÃ§Ã£o Dex vs Str
      * 
-     * Multiplicador < 2x: 0% de redução
-     * Multiplicador 2x: 20% de redução
-     * Multiplicador 3x: 70% de redução
-     * Multiplicador 4x+: 90% de redução
+     * Multiplicador < 2x: 0% de reduÃ§Ã£o
+     * Multiplicador 2x: 20% de reduÃ§Ã£o
+     * Multiplicador 3x: 70% de reduÃ§Ã£o
+     * Multiplicador 4x+: 90% de reduÃ§Ã£o
      */
     public double getDamageReduction(int enemyStrength) {
         double multiplier = getDexMultiplier(enemyStrength);
@@ -106,12 +106,12 @@ public class Dex {
     }
     
     /**
-     * Calcula o dano final após redução por Dex
+     * Calcula o dano final apÃ³s reduÃ§Ã£o por Dex
      */
     public int calculateFinalDamage(int incomingDamage, int enemyStrength) {
         double reduction = getDamageReduction(enemyStrength);
         int reducedDamage = (int)(incomingDamage * (1.0 - reduction));
-        return Math.max(0, reducedDamage); // Mínimo 0
+        return Math.max(0, reducedDamage); // MÃ­nimo 0
     }
     
     // ===== KNOCKBACK =====
@@ -120,7 +120,7 @@ public class Dex {
      * 
      * Multiplicador < 2x: knockback normal (1.0x)
      * Multiplicador 2x: knockback reduzido (0.5x)
-     * Multiplicador 3x: knockback mínimo (0.1x)
+     * Multiplicador 3x: knockback mÃ­nimo (0.1x)
      * Multiplicador 4x+: sem knockback (0.0x)
      */
     public double getKnockbackMultiplier(int enemyStrength) {
@@ -142,11 +142,11 @@ public class Dex {
     
     // ===== CHANCE DE ACERTAR (REVERSO) =====
     /**
-     * Quando DEX é muito maior que STR, o inimigo tem dificuldade de acertar
+     * Quando DEX Ã© muito maior que STR, o inimigo tem dificuldade de acertar
      * 
      * Multiplicador < 3x: o inimigo consegue atacar normal
      * Multiplicador 3x: inimigo tem 50% de chance de acertar
-     * Multiplicador 4x+: inimigo só consegue atacar 5% das vezes (fica parado)
+     * Multiplicador 4x+: inimigo sÃ³ consegue atacar 5% das vezes (fica parado)
      */
     public double getEnemyAccuracyReduction(int enemyStrength) {
         double multiplier = getDexMultiplier(enemyStrength);
@@ -157,7 +157,7 @@ public class Dex {
             // Entre 3x e 4x: reduz de 100% para 50%
             return 1.0 - (multiplier - 3.0) * 0.5;
         } else {
-            // 4x ou mais: inimigo tem só 5% de chance de acertar
+            // 4x ou mais: inimigo tem sÃ³ 5% de chance de acertar
             return 0.05;
         }
     }
@@ -171,7 +171,7 @@ public class Dex {
     }
     
     /**
-     * Verifica se é DOMINANTE (4x+) - praticamente fica parado
+     * Verifica se Ã© DOMINANTE (4x+) - praticamente fica parado
      */
     public boolean isDominant(int enemyStrength) {
         return getDexMultiplier(enemyStrength) >= 4.0;
@@ -206,18 +206,18 @@ public class Dex {
     }
     
     /**
-     * Método para mostrar comparação com inimigo
+     * MÃ©todo para mostrar comparaÃ§Ã£o com inimigo
      */
     public String compareWithEnemy(int enemyStrength) {
         double multiplier = getDexMultiplier(enemyStrength);
-        return "=== ANÁLISE DE COMBATE ===\n" +
+        return "=== ANÃLISE DE COMBATE ===\n" +
                 "Sua Destreza: " + dexterity + "\n" +
-                "Força do Inimigo: " + enemyStrength + "\n" +
+                "ForÃ§a do Inimigo: " + enemyStrength + "\n" +
                 "Multiplicador: " + String.format("%.2f", multiplier) + "x\n" +
-                "Nível: " + getDexAdvantageLevel(enemyStrength) + "\n" +
+                "NÃ­vel: " + getDexAdvantageLevel(enemyStrength) + "\n" +
                 "\nEsquiva: " + String.format("%.1f", getDodgeChance(enemyStrength) * 100) + "%\n" +
-                "Redução de Dano: " + String.format("%.1f", getDamageReduction(enemyStrength) * 100) + "%\n" +
+                "ReduÃ§Ã£o de Dano: " + String.format("%.1f", getDamageReduction(enemyStrength) * 100) + "%\n" +
                 "Knockback: " + String.format("%.1f", getKnockbackMultiplier(enemyStrength) * 100) + "%\n" +
-                "Acurácia do Inimigo: " + String.format("%.1f", getEnemyAccuracyReduction(enemyStrength) * 100) + "%\n";
+                "AcurÃ¡cia do Inimigo: " + String.format("%.1f", getEnemyAccuracyReduction(enemyStrength) * 100) + "%\n";
     }
 }

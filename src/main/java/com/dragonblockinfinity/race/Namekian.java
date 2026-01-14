@@ -3,11 +3,11 @@ package com.dragonblockinfinity.race;
 import com.dragonblockinfinity.fightstyle.FightStyleEnum;
 
 /**
- * Raça Namekiano
- * Místicos e regenerativos com grande afinidade com Ki
+ * RaÃ§a Namekiano
+ * MÃ­sticos e regenerativos com grande afinidade com Ki
  * 
- * Stats Base: Espírito alto, Vontade alta
- * Ki Máximo: 4500 base
+ * Stats Base: EspÃ­rito alto, Vontade alta
+ * Ki MÃ¡ximo: 4500 base
  * Multiplicador de Ki: 1.8x
  * Estilo de Luta: Spiritualist (Ki e magia)
  */
@@ -77,7 +77,7 @@ public class Namekian implements IRace {
     
     @Override
     public String getRaceDescription() {
-        return "Místicos e regenerativos com grande afinidade com Ki e magia";
+        return "MÃ­sticos e regenerativos com grande afinidade com Ki e magia";
     }
     
     @Override

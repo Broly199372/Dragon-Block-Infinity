@@ -1,20 +1,20 @@
 package com.dragonblockinfinity.race;
 
 /**
- * Enum para registrar todas as raças disponíveis
- * Saiyan, Human, Half-Saiyan e Arconsian estão registradas
- * Android, Majin e Namekian serão adicionadas quando as texturas forem criadas
+ * Enum para registrar todas as raÃ§as disponÃ­veis
+ * Saiyan, Human, Half-Saiyan e Arconsian estÃ£o registradas
+ * Android, Majin e Namekian serÃ£o adicionadas quando as texturas forem criadas
  */
 public enum RaceEnum {
     SAIYAN("Saiyajin", "Guerreiros poderosos com grande potencial"),
-    HUMAN("Humano", "Adaptável e determinado"),
-    HALF("Metade-Saiyajin", "Híbrido com potencial extraordinário"),
-    ARCONSIAN("Arconsiano", "Guerreiro galáctico frio e poderoso"),
+    HUMAN("Humano", "AdaptÃ¡vel e determinado"),
+    HALF("Metade-Saiyajin", "HÃ­brido com potencial extraordinÃ¡rio"),
+    ARCONSIAN("Arconsiano", "Guerreiro galÃ¡ctico frio e poderoso"),
     
     // TODO: Adicionar quando as texturas forem criadas
-    // NAMEKIAN("Namekiano", "Místicos e regenerativos"),
-    // ANDROID("Android", "Tecnológico e perfeito"),
-    // MAJIN("Majin", "Mágico e poderoso");
+    // NAMEKIAN("Namekiano", "MÃ­sticos e regenerativos"),
+    // ANDROID("Android", "TecnolÃ³gico e perfeito"),
+    // MAJIN("Majin", "MÃ¡gico e poderoso");
     ;
     
     private final String displayName;

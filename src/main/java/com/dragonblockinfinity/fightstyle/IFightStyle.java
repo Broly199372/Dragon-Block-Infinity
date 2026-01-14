@@ -7,12 +7,12 @@ package com.dragonblockinfinity.fightstyle;
 public interface IFightStyle {
     
     /**
-     * Retorna o multiplicador de Força (Str)
+     * Retorna o multiplicador de ForÃ§a (Str)
      */
     double getStrengthMultiplier();
     
     /**
-     * Retorna o multiplicador de Constituição (Con)
+     * Retorna o multiplicador de ConstituiÃ§Ã£o (Con)
      */
     double getConstitutionMultiplier();
     
@@ -27,7 +27,7 @@ public interface IFightStyle {
     double getWillMultiplier();
     
     /**
-     * Retorna o multiplicador de Espírito (Spi)
+     * Retorna o multiplicador de EspÃ­rito (Spi)
      */
     double getSpiritMultiplier();
     
@@ -37,12 +37,12 @@ public interface IFightStyle {
     double getMindMultiplier();
     
     /**
-     * Retorna o stat base de Força
+     * Retorna o stat base de ForÃ§a
      */
     int getBaseStrength();
     
     /**
-     * Retorna o stat base de Constituição
+     * Retorna o stat base de ConstituiÃ§Ã£o
      */
     int getBaseConstitution();
     
@@ -57,7 +57,7 @@ public interface IFightStyle {
     int getBaseWillpower();
     
     /**
-     * Retorna o stat base de Espírito
+     * Retorna o stat base de EspÃ­rito
      */
     int getBaseSpirit();
     
@@ -72,7 +72,7 @@ public interface IFightStyle {
     String getStyleName();
     
     /**
-     * Retorna a descrição do estilo
+     * Retorna a descriÃ§Ã£o do estilo
      */
     String getStyleDescription();
     

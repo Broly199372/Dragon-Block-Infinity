@@ -3,12 +3,12 @@ package com.dragonblockinfinity.power;
 import com.dragonblockinfinity.race.RaceEnum;
 
 /**
- * Sistema de transformações especiais por raça
+ * Sistema de transformaÃ§Ãµes especiais por raÃ§a
  */
 public class RaceTransformations {
     
     /**
-     * Super Saiyan - transf. clássica de Saiyajin
+     * Super Saiyan - transf. clÃ¡ssica de Saiyajin
      */
     public static class SuperSaiyan {
         public static final double STRENGTH_MULTIPLIER = 2.0;
@@ -50,7 +50,7 @@ public class RaceTransformations {
     }
     
     /**
-     * Half-Saiyan Hybrid Mode - combinação de poderes
+     * Half-Saiyan Hybrid Mode - combinaÃ§Ã£o de poderes
      */
     public static class HybridMode {
         public static final double STRENGTH_MULTIPLIER = 1.6;
@@ -64,7 +64,7 @@ public class RaceTransformations {
     }
     
     /**
-     * Human Zenkai Boost - Humano fica mais forte após se recuperar de quase morte
+     * Human Zenkai Boost - Humano fica mais forte apÃ³s se recuperar de quase morte
      */
     public static class ZenkaiBoost {
         public static final double STRENGTH_MULTIPLIER = 1.3;
@@ -78,7 +78,7 @@ public class RaceTransformations {
     }
     
     /**
-     * Obtém o multiplicador de transformação baseado na raça
+     * ObtÃ©m o multiplicador de transformaÃ§Ã£o baseado na raÃ§a
      */
     public static double getTransformationMultiplier(RaceEnum race, String transformName) {
         return switch (race) {

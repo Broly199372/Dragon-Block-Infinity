@@ -2,23 +2,23 @@ package com.dragonblockinfinity.fightstyle;
 
 /**
  * Estilo Guerreiro
- * Focado em força e resistência corporal
+ * Focado em forÃ§a e resistÃªncia corporal
  * 
  * Stats Base:
  * - Str: 14 (muito alto)
  * - Con: 13 (alto)
- * - Dex: 10 (médio)
+ * - Dex: 10 (mÃ©dio)
  * - Will: 9 (baixo)
  * - Spi: 8 (muito baixo)
  * - Mnd: 9 (baixo)
  * 
  * Multiplicadores:
- * - Str: 2.2x (bônus máximo)
- * - Con: 2.0x (bônus máximo)
+ * - Str: 2.2x (bÃ´nus mÃ¡ximo)
+ * - Con: 2.0x (bÃ´nus mÃ¡ximo)
  * - Dex: 1.2x
  * - Mnd: 0.8x (penalidade)
  * - Will: 0.8x (penalidade)
- * - Spi: 0.5x (penalidade máxima)
+ * - Spi: 0.5x (penalidade mÃ¡xima)
  */
 public class Warrior implements IFightStyle {
     
@@ -105,7 +105,7 @@ public class Warrior implements IFightStyle {
     
     @Override
     public String getStyleDescription() {
-        return "Focado em força e resistência corporal. Excelente em combate corpo a corpo mas fraco em Ki.";
+        return "Focado em forÃ§a e resistÃªncia corporal. Excelente em combate corpo a corpo mas fraco em Ki.";
     }
     
     @Override
